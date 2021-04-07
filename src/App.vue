@@ -230,8 +230,8 @@ export default {
 </script>
 
 <style scoped>
-@import url('./assets/custom.css');
-@import url('./assets/animation.css');
+@import '~./assets/custom.css';
+@import '~./assets/animation.css';
 
 </style>
 
