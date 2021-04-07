@@ -19,7 +19,7 @@ I'm Agnes Kabongo, Intern at 👨‍💻 [Becode.org](https://becode.org).  I am
 - 👯 Currently learning Laravel and Vue.js
 
 ## Weather App 
-⚡ The Vue Weather App allows the user to search for the current weather for a city.  This application was developed to provide examples of how to unit test Vue components.
+⚡ The Vue Weather App allows the user to search for the current weather for a city.  This application was developed to provide examples of how to use Vue.
 
 
 ---
