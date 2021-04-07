@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://agkabongo.github.io/weatherapp/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint"
