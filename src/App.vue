@@ -1,21 +1,21 @@
 <template>
   <div id="main" :class="isDay ? 'day' : 'night'">
-    <div class="container my-5">
-      <h1 class="title text-center">Weather in</h1>
-      <form class="search-location" v-on:submit.prevent="getWeather">
+    <h1 class="title text-center">Weather App</h1>
+    <div class="container my-5 d-flex flex-column ">
+      <div class="mb-5">
+        <form class="search-location mx-5" v-on:submit.prevent="getWeather">
         <input
           type="text"
-          class="form-control text-muted form-rounded p-4 shadow-sm"
+          class="form-control text-muted form-rounded p-4 mx-5 shadow-sm"
           placeholder="What City?"
           v-model="citySearch"
           autocomplete="off"
         />
       </form>
-      <p class="text-center my-3" v-if="cityFound">No city found</p>
-      <div
-        class="card rounded my-3 shadow-lg back-card overflow-hidden"
-        v-if="visible"
-      >
+      <p class="text-center my-2" v-if="cityFound">No city found</p>
+      </div>
+      
+      <div class="card rounded mb-5 shadow-lg back-card"  v-if="visible">
         <!-- weather animation container -->
         <div>
           <div icon="sunny" v-if="clearSky">
@@ -61,11 +61,9 @@
         </div>
 
         <!-- Top of card starts here -->
-        <div class="card-top text-center" style="margin-bottom: 15rem">
-          <div class="city-name my-3">
-            <p>{{ weather.cityName }}</p>
-            <span>...</span>
-            <p class="">{{ weather.country }}</p>
+        <div class="card-top text-center" style="margin-bottom: 8rem">
+          <div class="city-name my-5">
+            <p>{{ weather.cityName }} , {{ weather.country }}</p>
           </div>
         </div>
         <!-- top of card ends here -->
@@ -96,7 +94,7 @@
           <!-- card middle ends here -->
 
           <!-- card bottom starts here -->
-          <div class="card-bottom px-5 py-4 row">
+          <div class="card-bottom py-4 d-flex flex-row align-items-center">
             <div class="col text-center">
               <p>{{ weather.feelsLike }}&deg;C</p>
               <span>Feels like</span>
@@ -126,23 +124,23 @@ export default {
   data() {
     return {
       cityFound: false,
-      visible: false,
+      visible: true,
       stormy: false,
       cloudy: false,
-      clearSky: false,
+      clearSky: true,
       clearNight: false,
       snowy: false,
       isDay: true,
       citySearch: "",
       weather: {
-        cityName: "Gwarinpa",
-        country: "NG",
-        temperature: 12,
+        cityName: "Oranjestad",
+        country: "AW",
+        temperature: 28,
         description: "Clouds everywhere",
-        lowTemp: "19",
-        highTemp: "30",
-        feelsLike: "20",
-        humidity: "55",
+        lowTemp: "28",
+        highTemp: "28",
+        feelsLike: "32",
+        humidity: "74",
       },
     };
   },
@@ -231,7 +229,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('./assets/custom.css');
 @import url('./assets/animation.css');
+
 </style>
+
