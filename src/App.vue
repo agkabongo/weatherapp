@@ -148,7 +148,7 @@ export default {
     getWeather: async function () {
       console.log(this.citySearch);
       const key = "ae50d42ef1a3a4ec4b519270f19cd7b4";
-      const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch}&appid=${key}&units=metric`;
+      const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${this.citySearch}&appid=${key}&units=metric`;
       //fetch weather
       try {
         const response = await fetch(baseURL);
